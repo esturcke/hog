@@ -2,8 +2,10 @@ import {
   brightRed,
   brightYellow,
   brightBlue,
+  gray,
 } from "https://deno.land/std@0.95.0/fmt/colors.ts";
 import { sprintf } from "https://deno.land/std@0.95.0/fmt/printf.ts";
+import { parse } from "https://deno.land/std/flags/mod.ts";
 
 type Pid = string;
 
@@ -130,8 +132,13 @@ const formatMemory = (memory: number) => {
   return brightBlue(sprintf("%5.1f KB", memory));
 };
 
-for (const [name, { memory }] of [...applications]
+const args = parse(Deno.args);
+
+for (const [name, { memory, pids }] of [...applications]
   .filter((a) => a[1].memory > 2 ** 10 * 50)
   .sort((a, b) => b[1].memory - a[1].memory)) {
-  console.log(`${formatMemory(memory)} ${name}`);
+  console.log(
+    `${formatMemory(memory)}  ${name}` +
+      (args.p ? ` ${gray("(" + [...pids].join(", ") + ")")}` : "")
+  );
 }

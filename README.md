@@ -8,17 +8,29 @@ This tool leverages `top` and `ps` to get a rough idea of what applications are 
 
 ```
 brew install deno
-deno run --allow-run=top,ps --check https://deno.land/x/hog@0.0.1/hog.ts
+deno run --allow-run=top,ps --check https://deno.land/x/hog@0.0.2/hog.ts
 ```
 
 # Installing
 
 ```
-deno install --allow-run=top,ps https://deno.land/x/hog@0.0.1/hog.ts
+deno install --allow-run=top,ps https://deno.land/x/hog@0.0.2/hog.ts
+```
+
+or to update
+
+```
+deno install -f --allow-run=top,ps https://deno.land/x/hog@0.0.2/hog.ts
 ```
 
 # Running
 
 ```
 hog
+```
+
+to show PIDs for top level processes that were collapsed by name:
+
+```
+hog -p
 ```
