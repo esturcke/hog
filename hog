@@ -1,0 +1,2 @@
+#!/bin/sh
+exec deno run --allow-run=top,ps hog.ts "$@"
