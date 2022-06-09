@@ -3,9 +3,9 @@ import {
   brightYellow,
   brightBlue,
   gray,
-} from "https://deno.land/std@0.95.0/fmt/colors.ts";
-import { sprintf } from "https://deno.land/std@0.95.0/fmt/printf.ts";
-import { parse } from "https://deno.land/std/flags/mod.ts";
+} from "https://deno.land/std@0.143.0/fmt/colors.ts";
+import { sprintf } from "https://deno.land/std@0.143.0/fmt/printf.ts";
+import { parse } from "https://deno.land/std@0.143.0/flags/mod.ts";
 
 type Pid = string;
 
