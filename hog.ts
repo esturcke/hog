@@ -115,7 +115,8 @@ const names = await applicationNames();
 
 const applications = new Map<string, { memory: number; pids: Set<string> }>();
 for (const pid of processTree.get("1")!.children) {
-  const name = names.get(pid)!.shortName;
+  const name = names.get(pid)?.shortName;
+  if (name == null) continue;
   if (!applications.has(name))
     applications.set(name, { memory: 0, pids: new Set() });
   applications.get(name)!.memory += totalMemory(pid);
