@@ -164,7 +164,7 @@ const formatMemory = (memory: number) => {
 
 const formatCpu = (cpu: number) => {
   if (cpu > 80) return brightRed(sprintf("%5.1f %%", cpu));
-  if (cpu > 30 ** 10 * 150) return brightYellow(sprintf("%5.1f %%", cpu));
+  if (cpu > 30) return brightYellow(sprintf("%5.1f %%", cpu));
   return brightBlue(sprintf("%5.1f %%", cpu));
 };
 
