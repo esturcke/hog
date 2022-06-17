@@ -8,19 +8,13 @@ This tool leverages `top` and `ps` to get a rough idea of what applications are 
 
 ```
 brew install deno
-deno run --allow-run=top,ps --check https://deno.land/x/hog@0.0.6/hog.ts
+deno run --allow-run=top,ps --check https://deno.land/x/hog/hog.ts
 ```
 
 # Installing
 
 ```
-deno install --allow-run=top,ps https://deno.land/x/hog@0.0.6/hog.ts
-```
-
-or to update
-
-```
-deno install -f --allow-run=top,ps https://deno.land/x/hog@0.0.6/hog.ts
+deno install --allow-run=top,ps https://deno.land/x/hog/hog.ts
 ```
 
 # Running
