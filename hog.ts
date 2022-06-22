@@ -10,10 +10,12 @@ import { parse } from "https://deno.land/std@0.143.0/flags/mod.ts";
 type Pid = string;
 
 const parseMemory = (mem: string) => {
-  const match = mem.match(/^(\d+)(K|M|G)[-+]?$/);
+  const match = mem.match(/^(\d+)(B|K|M|G)[-+]?$/);
   if (!match) throw Error(`Could not parse memory ${mem}`);
   const scale =
-    match[2] === "K"
+    match[2] === "B"
+      ? 1 / 2 ** 10
+      : match[2] === "K"
       ? 1
       : match[2] === "M"
       ? 2 ** 10
