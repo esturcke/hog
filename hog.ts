@@ -171,6 +171,12 @@ const formatCpu = (cpu: number) => {
 };
 
 const args = parse(Deno.args);
+
+if (args._[0] === "version") {
+  console.log("0.0.8");
+  Deno.exit();
+}
+
 const mode = args._[0] === "cpu" ? "cpu" : "memory";
 
 if (mode === "cpu") {
