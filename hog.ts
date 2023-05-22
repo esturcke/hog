@@ -28,6 +28,7 @@ const parseMemory = (mem: string) => {
 const nameMatchers = [
   /^\/Applications\/(.*?)(?:\.app)?\//,
   /^\/System\/Applications\/Utilities\/(.*?)(?:\.app)?\//,
+  /^\/System\/Applications\/(.*?)(?:\.app)?\//,
   /^\/System\/Library\/[^ ]*\/([^ ]*)/,
   /^\/opt\/homebrew\/bin\/([^ ]*)/,
   /^\/usr\/[^ ]*\/([^ ]*)/,
